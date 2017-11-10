@@ -556,7 +556,7 @@ def stFeatureExtraction(signal, Fs, Win, Step):
 
     numOfTimeSpectralFeatures = 8
     numOfHarmonicFeatures = 0
-    nceps = 13
+    nceps = 39
     numOfChromaFeatures = 13
     totalNumOfFeatures = numOfTimeSpectralFeatures + nceps + numOfHarmonicFeatures + numOfChromaFeatures
 #    totalNumOfFeatures = numOfTimeSpectralFeatures + nceps + numOfHarmonicFeatures
@@ -863,7 +863,7 @@ def mtFeatureExtractionToFile(fileName, midTermSize, midTermStep, shortTermSize,
     if storeStFeatures:
         [mtF, stF] = mtFeatureExtraction(x, Fs, round(Fs * midTermSize), round(Fs * midTermStep), round(Fs * shortTermSize), round(Fs * shortTermStep))
     else:
-        [mtF, _] = mtFeatureExtraction(x, Fs, round(Fs*midTermSize), round(Fs * midTermStep), round(Fs * shortTermSize), round(Fs * shortTermStep))
+        [mtF, _] =   mtFeatureExtraction(x, Fs, round(Fs * midTermSize), round(Fs * midTermStep), round(Fs * shortTermSize), round(Fs * shortTermStep))
 
     numpy.save(outPutFile, mtF)                              # save mt features to numpy file
     if PLOT:
